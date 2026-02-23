@@ -1332,69 +1332,106 @@
         }
 
         function applyTranslations() {
-            const t = translations[currentLang];
-            
-            // Update all elements with data-i18n attribute
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (t[key]) {
-                    element.textContent = t[key];
+            try {
+                const t = translations[currentLang];
+                
+                // Update all elements with data-i18n attribute
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (t[key]) {
+                        element.textContent = t[key];
+                    }
+                });
+                
+                // Update specific elements - with error handling
+                const elements = {
+                    'mainTitle': t.mainTitle,
+                    'subtitle': t.subtitle,
+                    'disclaimerTitle': t.disclaimerTitle,
+                    'disclaimerText': t.disclaimerText,
+                    'langButton': t.langButton
+                };
+                
+                for (let [id, text] of Object.entries(elements)) {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = text;
                 }
-            });
-            
-            // Update specific elements
-            document.getElementById('mainTitle').textContent = t.mainTitle;
-            document.getElementById('subtitle').textContent = t.subtitle;
-            document.getElementById('disclaimerTitle').textContent = t.disclaimerTitle;
-            document.getElementById('disclaimerText').textContent = t.disclaimerText;
-            document.getElementById('searchInput').placeholder = t.searchPlaceholder;
-            document.getElementById('langButton').textContent = t.langButton;
-        }
-
-        function showTab(tabId, clickedElement) {
-            // Hide all tabs
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            // Show selected tab
-            document.getElementById(tabId).classList.add('active');
-            if (clickedElement) {
-                clickedElement.classList.add('active');
+                
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+            } catch (error) {
+                console.error('Translation error:', error);
             }
         }
 
-        // Search functionality
-        const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const foodItems = document.querySelectorAll('.food-item');
+        function showTab(tabId, clickedElement) {
+            try {
+                console.log('Switching to tab:', tabId);
+                
+                // Hide all tab content
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Remove active from all tab buttons
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
 
-            foodItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    item.style.display = 'flex';
+                // Show selected tab content
+                const selectedTab = document.getElementById(tabId);
+                if (selectedTab) {
+                    selectedTab.classList.add('active');
                 } else {
-                    item.style.display = 'none';
+                    console.error('Tab not found:', tabId);
                 }
-            });
-        });
+                
+                // Activate clicked button
+                if (clickedElement) {
+                    clickedElement.classList.add('active');
+                }
+            } catch (error) {
+                console.error('Tab switching error:', error);
+            }
+        }
 
-        // Category collapse/expand
-        document.querySelectorAll('.category-header').forEach(header => {
-            header.addEventListener('click', function() {
-                const content = this.nextElementSibling;
-                if (content.style.display === 'none') {
-                    content.style.display = 'block';
-                    this.querySelector('span:last-child').textContent = '➕';
-                } else {
-                    content.style.display = 'none';
-                    this.querySelector('span:last-child').textContent = '➖';
-                }
+        // Initialize after DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing...');
+            
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const foodItems = document.querySelectorAll('.food-item');
+
+                    foodItems.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        if (text.includes(searchTerm)) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Category collapse/expand
+            document.querySelectorAll('.category-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    if (content.style.display === 'none') {
+                        content.style.display = 'block';
+                        this.querySelector('span:last-child').textContent = '➕';
+                    } else {
+                        content.style.display = 'none';
+                        this.querySelector('span:last-child').textContent = '➖';
+                    }
+                });
             });
+            
+            console.log('Initialization complete');
         });
     </script>
 </body>
