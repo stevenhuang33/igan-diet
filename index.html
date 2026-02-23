@@ -34,6 +34,27 @@
             color: white;
             padding: 40px 30px;
             text-align: center;
+            position: relative;
+        }
+
+        .lang-toggle {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
         }
 
         h1 {
@@ -306,13 +327,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>🥗 IgA Nephropathy Dietary Guide</h1>
-            <p class="subtitle">Stage 3 CKD Nutrition Plan</p>
+            <button class="lang-toggle" onclick="toggleLang()">🌐 <span id="langBtn">中文</span></button>
+            <h1 class="i18n" data-en="🥗 IgA Nephropathy Dietary Guide" data-zh="🥗 IgA肾病饮食指南">🥗 IgA Nephropathy Dietary Guide</h1>
+            <p class="subtitle i18n" data-en="Stage 3 CKD Nutrition Plan" data-zh="慢性肾病3期营养计划">Stage 3 CKD Nutrition Plan</p>
         </header>
 
         <div class="disclaimer">
-            <strong>⚠️ Medical Disclaimer:</strong>
-            This is educational information only. Always consult with your healthcare provider, nephrologist, and registered dietitian before making dietary changes. Individual needs vary based on lab values, medications, and overall health status.
+            <strong class="i18n" data-en="⚠️ Medical Disclaimer:" data-zh="⚠️ 医疗免责声明：">⚠️ Medical Disclaimer:</strong>
+            <span class="i18n" data-en="This is educational information only. Always consult with your healthcare provider, nephrologist, and registered dietitian before making dietary changes. Individual needs vary based on lab values, medications, and overall health status." data-zh="本内容仅供教育参考。在调整饮食前，请务必咨询您的医疗保健提供者、肾脏科医生和注册营养师。个人需求因化验值、药物和整体健康状况而异。">This is educational information only. Always consult with your healthcare provider, nephrologist, and registered dietitian before making dietary changes. Individual needs vary based on lab values, medications, and overall health status.</span>
         </div>
 
         <div class="search-bar">
@@ -320,17 +342,17 @@
         </div>
 
         <div class="tabs">
-            <button class="tab active" onclick="showTab('good-foods', this)">✅ Foods to Eat</button>
-            <button class="tab" onclick="showTab('avoid-foods', this)">❌ Foods to Limit/Avoid</button>
-            <button class="tab" onclick="showTab('daily-targets', this)">📊 Daily Targets</button>
-            <button class="tab" onclick="showTab('meal-plan', this)">🍽️ Sample Meal Plan</button>
-            <button class="tab" onclick="showTab('tips', this)">💡 Tips & Guidelines</button>
+            <button class="tab active" onclick="showTab('good-foods', this)"><span class="i18n" data-en="✅ Foods to Eat" data-zh="✅ 推荐食物">✅ Foods to Eat</span></button>
+            <button class="tab" onclick="showTab('avoid-foods', this)"><span class="i18n" data-en="❌ Foods to Limit/Avoid" data-zh="❌ 限制/避免食物">❌ Foods to Limit/Avoid</span></button>
+            <button class="tab" onclick="showTab('daily-targets', this)"><span class="i18n" data-en="📊 Daily Targets" data-zh="📊 每日目标">📊 Daily Targets</span></button>
+            <button class="tab" onclick="showTab('meal-plan', this)"><span class="i18n" data-en="🍽️ Sample Meal Plan" data-zh="🍽️ 示例餐单">🍽️ Sample Meal Plan</span></button>
+            <button class="tab" onclick="showTab('tips', this)"><span class="i18n" data-en="💡 Tips & Guidelines" data-zh="💡 提示与指南">💡 Tips & Guidelines</span></button>
         </div>
 
         <div class="content">
             <!-- GOOD FOODS TAB -->
             <div id="good-foods" class="tab-content active">
-                <h2>✅ Kidney-Friendly Foods for Stage 3 IgAN/CKD</h2>
+                <h2 class="i18n" data-en="✅ Kidney-Friendly Foods for Stage 3 IgAN/CKD" data-zh="✅ 适合3期IgAN/CKD的护肾食物">✅ Kidney-Friendly Foods for Stage 3 IgAN/CKD</h2>
                 
                 <div class="food-category">
                     <div class="category-header">
@@ -483,7 +505,7 @@
 
             <!-- AVOID FOODS TAB -->
             <div id="avoid-foods" class="tab-content">
-                <h2>❌ Foods to Limit or Avoid (Stage 3 CKD)</h2>
+                <h2 class="i18n" data-en="❌ Foods to Limit or Avoid (Stage 3 CKD)" data-zh="❌ 限制或避免的食物（3期CKD）">❌ Foods to Limit or Avoid (Stage 3 CKD)</h2>
 
                 <div class="food-category">
                     <div class="category-header" style="background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);">
@@ -619,7 +641,7 @@
 
             <!-- DAILY TARGETS TAB -->
             <div id="daily-targets" class="tab-content">
-                <h2>📊 Daily Nutritional Targets (Stage 3 CKD)</h2>
+                <h2 class="i18n" data-en="📊 Daily Nutritional Targets (Stage 3 CKD)" data-zh="📊 每日营养目标（3期CKD）">📊 Daily Nutritional Targets (Stage 3 CKD)</h2>
                 
                 <div class="daily-targets">
                     <div class="target-card">
@@ -680,7 +702,7 @@
 
             <!-- MEAL PLAN TAB -->
             <div id="meal-plan" class="tab-content">
-                <h2>🍽️ Sample Daily Meal Plan</h2>
+                <h2 class="i18n" data-en="🍽️ Sample Daily Meal Plan" data-zh="🍽️ 示例每日餐单">🍽️ Sample Daily Meal Plan</h2>
                 <p style="margin-bottom: 20px; color: #666;">This is a general example. Adjust portions based on your individual needs.</p>
 
                 <div class="meal-plan">
@@ -742,7 +764,7 @@
 
             <!-- TIPS TAB -->
             <div id="tips" class="tab-content">
-                <h2>💡 Important Tips & Guidelines</h2>
+                <h2 class="i18n" data-en="💡 Important Tips & Guidelines" data-zh="💡 重要提示与指南">💡 Important Tips & Guidelines</h2>
 
                 <h3 style="margin-top: 20px; margin-bottom: 15px;">🍳 Cooking Tips</h3>
                 <ul class="tips-list">
@@ -802,6 +824,17 @@
             if (btn) {
                 btn.classList.add('active');
             }
+        }
+
+        // Lightweight language toggle
+        let currentLang = 'en';
+        function toggleLang() {
+            currentLang = (currentLang === 'en') ? 'zh' : 'en';
+            document.querySelectorAll('.i18n').forEach(el => {
+                const text = el.getAttribute('data-' + currentLang);
+                if (text) el.textContent = text;
+            });
+            document.getElementById('langBtn').textContent = (currentLang === 'en') ? '中文' : 'EN';
         }
 
         // Search functionality
