@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Functionality Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        h1 { color: #333; }
+        .tab { 
+            padding: 15px 25px; 
+            margin: 5px; 
+            border: none; 
+            background: #ddd; 
+            cursor: pointer; 
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .tab.active { background: #4CAF50; color: white; }
+        .tab-content { 
+            display: none; 
+            padding: 30px; 
+            margin-top: 20px; 
+            border: 2px solid #4CAF50;
+            background: white;
+            border-radius: 8px;
+        }
+        .tab-content.active { display: block; }
+        #status { 
+            margin: 20px 0; 
+            padding: 10px; 
+            background: #fff3cd; 
+            border: 1px solid #ffc107;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Tab Functionality Test</h1>
+    <div id="status">Click a tab below. If working correctly, the content should change.</div>
+    
+    <div>
+        <button class="tab active" onclick="switchTab('tab1', this)">✅ Tab 1</button>
+        <button class="tab" onclick="switchTab('tab2', this)">❌ Tab 2</button>
+        <button class="tab" onclick="switchTab('tab3', this)">📊 Tab 3</button>
+    </div>
+    
+    <div id="tab1" class="tab-content active">
+        <h2>✅ Tab 1 Content</h2>
+        <p>This is the FIRST tab. If you can see this, tab switching is working!</p>
+        <p>Current time: <span id="time1"></span></p>
+    </div>
+    
+    <div id="tab2" class="tab-content">
+        <h2>❌ Tab 2 Content</h2>
+        <p>This is the SECOND tab. You should only see this when Tab 2 is clicked.</p>
+        <p>Current time: <span id="time2"></span></p>
+    </div>
+    
+    <div id="tab3" class="tab-content">
+        <h2>📊 Tab 3 Content</h2>
+        <p>This is the THIRD tab. You should only see this when Tab 3 is clicked.</p>
+        <p>Current time: <span id="time3"></span></p>
+    </div>
+
+    <script>
+        // Update times
+        function updateTimes() {
+            const now = new Date().toLocaleTimeString();
+            document.getElementById('time1').textContent = now;
+            document.getElementById('time2').textContent = now;
+            document.getElementById('time3').textContent = now;
+        }
+        updateTimes();
+        setInterval(updateTimes, 1000);
+        
+        function switchTab(tabId, btn) {
+            // Log to console (check browser DevTools)
+            console.log('switchTab called:', tabId);
+            
+            // Update status
+            document.getElementById('status').innerHTML = 
+                '✅ Tab switched successfully to: <strong>' + tabId + '</strong> at ' + new Date().toLocaleTimeString();
+            
+            // Remove active from all tabs and content
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('active');
+                console.log('Removed active from content:', el.id);
+            });
+            document.querySelectorAll('.tab').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Add active to selected tab and button
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+                console.log('Added active to:', tabId);
+            } else {
+                console.error('Tab not found:', tabId);
+            }
+            
+            if (btn) {
+                btn.classList.add('active');
+            }
+        }
+        
+        console.log('Test page loaded successfully');
+    </script>
+</body>
+</html>
