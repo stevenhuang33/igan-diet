@@ -34,27 +34,6 @@
             color: white;
             padding: 40px 30px;
             text-align: center;
-            position: relative;
-        }
-
-        .lang-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .lang-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
         }
 
         h1 {
@@ -302,7 +281,7 @@
             body {
                 background: white;
             }
-            .search-bar, .tabs, .lang-toggle {
+            .search-bar, .tabs {
                 display: none;
             }
             .container {
@@ -321,28 +300,19 @@
             .daily-targets {
                 grid-template-columns: 1fr;
             }
-            .lang-toggle {
-                top: 10px;
-                right: 10px;
-                font-size: 0.8rem;
-                padding: 6px 12px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <button class="lang-toggle" onclick="toggleLanguage()">
-                <span id="langButton">🌐 中文</span>
-            </button>
-            <h1 id="mainTitle">🥗 IgA Nephropathy Dietary Guide</h1>
-            <p class="subtitle" id="subtitle">Stage 3 CKD Nutrition Plan</p>
+            <h1>🥗 IgA Nephropathy Dietary Guide</h1>
+            <p class="subtitle">Stage 3 CKD Nutrition Plan</p>
         </header>
 
         <div class="disclaimer">
-            <strong id="disclaimerTitle">⚠️ Medical Disclaimer:</strong>
-            <span id="disclaimerText">This is educational information only. Always consult with your healthcare provider, nephrologist, and registered dietitian before making dietary changes. Individual needs vary based on lab values, medications, and overall health status.</span>
+            <strong>⚠️ Medical Disclaimer:</strong>
+            This is educational information only. Always consult with your healthcare provider, nephrologist, and registered dietitian before making dietary changes. Individual needs vary based on lab values, medications, and overall health status.
         </div>
 
         <div class="search-bar">
@@ -350,162 +320,162 @@
         </div>
 
         <div class="tabs">
-            <button class="tab active" onclick="showTab('good-foods', this)" data-i18n="tabGoodFoods">✅ Foods to Eat</button>
-            <button class="tab" onclick="showTab('avoid-foods', this)" data-i18n="tabAvoidFoods">❌ Foods to Limit/Avoid</button>
-            <button class="tab" onclick="showTab('daily-targets', this)" data-i18n="tabDailyTargets">📊 Daily Targets</button>
-            <button class="tab" onclick="showTab('meal-plan', this)" data-i18n="tabMealPlan">🍽️ Sample Meal Plan</button>
-            <button class="tab" onclick="showTab('tips', this)" data-i18n="tabTips">💡 Tips & Guidelines</button>
+            <button class="tab active" onclick="showTab('good-foods', this)">✅ Foods to Eat</button>
+            <button class="tab" onclick="showTab('avoid-foods', this)">❌ Foods to Limit/Avoid</button>
+            <button class="tab" onclick="showTab('daily-targets', this)">📊 Daily Targets</button>
+            <button class="tab" onclick="showTab('meal-plan', this)">🍽️ Sample Meal Plan</button>
+            <button class="tab" onclick="showTab('tips', this)">💡 Tips & Guidelines</button>
         </div>
 
         <div class="content">
             <!-- GOOD FOODS TAB -->
             <div id="good-foods" class="tab-content active">
-                <h2 data-i18n="goodFoodsTitle">✅ Kidney-Friendly Foods for Stage 3 IgAN/CKD</h2>
+                <h2>✅ Kidney-Friendly Foods for Stage 3 IgAN/CKD</h2>
                 
                 <div class="food-category">
                     <div class="category-header">
-                        <span data-i18n="catProtein">🥩 Lean Proteins</span>
+                        <span>🥩 Lean Proteins</span>
                         <span>➕</span>
                     </div>
                     <div class="category-content">
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodChicken">Skinless Chicken Breast</div>
-                                <div class="food-portion" data-i18n="portionChicken">Portion: 3 oz (85g) cooked</div>
-                                <div class="food-nutrients" data-i18n="nutrientsChicken">Low in phosphorus, moderate protein</div>
+                                <div class="food-name">Skinless Chicken Breast</div>
+                                <div class="food-portion">Portion: 3 oz (85g) cooked</div>
+                                <div class="food-nutrients">Low in phosphorus, moderate protein</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodFish">Fish (Salmon, Cod, Tilapia)</div>
-                                <div class="food-portion" data-i18n="portionFish">Portion: 3 oz (85g) cooked</div>
-                                <div class="food-nutrients" data-i18n="nutrientsFish">Omega-3 rich, heart-healthy</div>
+                                <div class="food-name">Fish (Salmon, Cod, Tilapia)</div>
+                                <div class="food-portion">Portion: 3 oz (85g) cooked</div>
+                                <div class="food-nutrients">Omega-3 rich, heart-healthy</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodEggWhites">Egg Whites</div>
-                                <div class="food-portion" data-i18n="portionEggWhites">Portion: 2-3 egg whites</div>
-                                <div class="food-nutrients" data-i18n="nutrientsEggWhites">High protein, low phosphorus</div>
+                                <div class="food-name">Egg Whites</div>
+                                <div class="food-portion">Portion: 2-3 egg whites</div>
+                                <div class="food-nutrients">High protein, low phosphorus</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="food-category">
                     <div class="category-header">
-                        <span data-i18n="catVegetables">🥒 Low-Potassium Vegetables</span>
+                        <span>🥒 Low-Potassium Vegetables</span>
                         <span>➕</span>
                     </div>
                     <div class="category-content">
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodCauliflower">Cauliflower</div>
-                                <div class="food-portion" data-i18n="portionCauliflower">Portion: 1/2 cup cooked</div>
-                                <div class="food-nutrients" data-i18n="nutrientsCauliflower">Low K+, high in fiber</div>
+                                <div class="food-name">Cauliflower</div>
+                                <div class="food-portion">Portion: 1/2 cup cooked</div>
+                                <div class="food-nutrients">Low K+, high in fiber</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodGreenBeans">Green Beans</div>
-                                <div class="food-portion" data-i18n="portionGreenBeans">Portion: 1/2 cup cooked</div>
-                                <div class="food-nutrients" data-i18n="nutrientsGreenBeans">Low K+, good for CKD</div>
+                                <div class="food-name">Green Beans</div>
+                                <div class="food-portion">Portion: 1/2 cup cooked</div>
+                                <div class="food-nutrients">Low K+, good for CKD</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodCabbage">Cabbage</div>
-                                <div class="food-portion" data-i18n="portionCabbage">Portion: 1/2 cup cooked</div>
-                                <div class="food-nutrients" data-i18n="nutrientsCabbage">Very low K+, anti-inflammatory</div>
+                                <div class="food-name">Cabbage</div>
+                                <div class="food-portion">Portion: 1/2 cup cooked</div>
+                                <div class="food-nutrients">Very low K+, anti-inflammatory</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodBellPeppers">Bell Peppers</div>
-                                <div class="food-portion" data-i18n="portionBellPeppers">Portion: 1/2 cup raw</div>
-                                <div class="food-nutrients" data-i18n="nutrientsBellPeppers">Low K+, high vitamin C</div>
+                                <div class="food-name">Bell Peppers</div>
+                                <div class="food-portion">Portion: 1/2 cup raw</div>
+                                <div class="food-nutrients">Low K+, high vitamin C</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="food-category">
                     <div class="category-header">
-                        <span data-i18n="catFruits">🍎 Low-Potassium Fruits</span>
+                        <span>🍎 Low-Potassium Fruits</span>
                         <span>➕</span>
                     </div>
                     <div class="category-content">
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodApples">Apples</div>
-                                <div class="food-portion" data-i18n="portionApples">Portion: 1 small apple</div>
-                                <div class="food-nutrients" data-i18n="nutrientsApples">Low K+, high fiber</div>
+                                <div class="food-name">Apples</div>
+                                <div class="food-portion">Portion: 1 small apple</div>
+                                <div class="food-nutrients">Low K+, high fiber</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodBlueberries">Blueberries</div>
-                                <div class="food-portion" data-i18n="portionBlueberries">Portion: 1/2 cup</div>
-                                <div class="food-nutrients" data-i18n="nutrientsBlueberries">Antioxidant-rich, low K+</div>
+                                <div class="food-name">Blueberries</div>
+                                <div class="food-portion">Portion: 1/2 cup</div>
+                                <div class="food-nutrients">Antioxidant-rich, low K+</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodGrapes">Grapes</div>
-                                <div class="food-portion" data-i18n="portionGrapes">Portion: 15-20 grapes</div>
-                                <div class="food-nutrients" data-i18n="nutrientsGrapes">Low K+, hydrating</div>
+                                <div class="food-name">Grapes</div>
+                                <div class="food-portion">Portion: 15-20 grapes</div>
+                                <div class="food-nutrients">Low K+, hydrating</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodStrawberries">Strawberries</div>
-                                <div class="food-portion" data-i18n="portionStrawberries">Portion: 1/2 cup</div>
-                                <div class="food-nutrients" data-i18n="nutrientsStrawberries">Low K+, vitamin C</div>
+                                <div class="food-name">Strawberries</div>
+                                <div class="food-portion">Portion: 1/2 cup</div>
+                                <div class="food-nutrients">Low K+, vitamin C</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="food-category">
                     <div class="category-header">
-                        <span data-i18n="catGrains">🍚 Kidney-Friendly Grains</span>
+                        <span>🍚 Kidney-Friendly Grains</span>
                         <span>➕</span>
                     </div>
                     <div class="category-content">
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodWhiteRice">White Rice</div>
-                                <div class="food-portion" data-i18n="portionWhiteRice">Portion: 1/2 cup cooked</div>
-                                <div class="food-nutrients" data-i18n="nutrientsWhiteRice">Lower phosphorus than brown rice</div>
+                                <div class="food-name">White Rice</div>
+                                <div class="food-portion">Portion: 1/2 cup cooked</div>
+                                <div class="food-nutrients">Lower phosphorus than brown rice</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodWhiteBread">White Bread</div>
-                                <div class="food-portion" data-i18n="portionWhiteBread">Portion: 1 slice</div>
-                                <div class="food-nutrients" data-i18n="nutrientsWhiteBread">Lower phos & K+ than whole wheat</div>
+                                <div class="food-name">White Bread</div>
+                                <div class="food-portion">Portion: 1 slice</div>
+                                <div class="food-nutrients">Lower phos & K+ than whole wheat</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                         <div class="food-item">
                             <div>
-                                <div class="food-name" data-i18n="foodPasta">Plain Pasta</div>
-                                <div class="food-portion" data-i18n="portionPasta">Portion: 1/2 cup cooked</div>
-                                <div class="food-nutrients" data-i18n="nutrientsPasta">Energy source, low K+</div>
+                                <div class="food-name">Plain Pasta</div>
+                                <div class="food-portion">Portion: 1/2 cup cooked</div>
+                                <div class="food-nutrients">Energy source, low K+</div>
                             </div>
-                            <span class="badge good" data-i18n="badgeGood">Good</span>
+                            <span class="badge good">Good</span>
                         </div>
                     </div>
                 </div>
@@ -513,135 +483,135 @@
 
             <!-- AVOID FOODS TAB -->
             <div id="avoid-foods" class="tab-content">
-                <h2 data-i18n="avoidFoodsTitle">❌ Foods to Limit or Avoid (Stage 3 CKD)</h2>
+                <h2>❌ Foods to Limit or Avoid (Stage 3 CKD)</h2>
 
                 <div class="food-category">
                     <div class="category-header" style="background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);">
-                        <span data-i18n="catHighPotassium">🥔 High-Potassium Foods (AVOID)</span>
+                        <span>🥔 High-Potassium Foods (AVOID)</span>
                         <span>➕</span>
                     </div>
                     <div class="category-content">
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodBananas">Bananas</div>
-                                <div class="food-portion" data-i18n="portionBananas">~420mg K+ per medium banana</div>
-                                <div class="food-nutrients" data-i18n="nutrientsBananas">Choose apples or berries instead</div>
+                                <div class="food-name">Bananas</div>
+                                <div class="food-portion">~420mg K+ per medium banana</div>
+                                <div class="food-nutrients">Choose apples or berries instead</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeAvoid">Avoid</span>
+                            <span class="badge avoid">Avoid</span>
                         </div>
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodPotatoes">Potatoes (esp. with skin)</div>
-                                <div class="food-portion" data-i18n="portionPotatoes">~900mg K+ per medium potato</div>
-                                <div class="food-nutrients" data-i18n="nutrientsPotatoes">Double-boil if eating occasionally</div>
+                                <div class="food-name">Potatoes (esp. with skin)</div>
+                                <div class="food-portion">~900mg K+ per medium potato</div>
+                                <div class="food-nutrients">Double-boil if eating occasionally</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeAvoid">Avoid</span>
+                            <span class="badge avoid">Avoid</span>
                         </div>
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodTomatoes">Tomatoes & Tomato Products</div>
-                                <div class="food-portion" data-i18n="portionTomatoes">High K+, esp. sauces</div>
-                                <div class="food-nutrients" data-i18n="nutrientsTomatoes">Limit to small portions</div>
+                                <div class="food-name">Tomatoes & Tomato Products</div>
+                                <div class="food-portion">High K+, esp. sauces</div>
+                                <div class="food-nutrients">Limit to small portions</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeAvoid">Avoid</span>
+                            <span class="badge avoid">Avoid</span>
                         </div>
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodOranges">Oranges & Orange Juice</div>
-                                <div class="food-portion" data-i18n="portionOranges">Very high K+</div>
-                                <div class="food-nutrients" data-i18n="nutrientsOranges">Choose apple juice instead</div>
+                                <div class="food-name">Oranges & Orange Juice</div>
+                                <div class="food-portion">Very high K+</div>
+                                <div class="food-nutrients">Choose apple juice instead</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeAvoid">Avoid</span>
+                            <span class="badge avoid">Avoid</span>
                         </div>
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodSpinach">Spinach & Swiss Chard</div>
-                                <div class="food-portion" data-i18n="portionSpinach">Very high K+</div>
-                                <div class="food-nutrients" data-i18n="nutrientsSpinach">Choose cabbage or lettuce</div>
+                                <div class="food-name">Spinach & Swiss Chard</div>
+                                <div class="food-portion">Very high K+</div>
+                                <div class="food-nutrients">Choose cabbage or lettuce</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeAvoid">Avoid</span>
+                            <span class="badge avoid">Avoid</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="food-category">
                     <div class="category-header" style="background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);">
-                        <span data-i18n="catHighPhosphorus">🥛 High-Phosphorus Foods (LIMIT)</span>
+                        <span>🥛 High-Phosphorus Foods (LIMIT)</span>
                         <span>➕</span>
                     </div>
                     <div class="category-content">
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodDairy">Dairy Products</div>
-                                <div class="food-portion" data-i18n="portionDairy">Milk, cheese, yogurt - high phos</div>
-                                <div class="food-nutrients" data-i18n="nutrientsDairy">Limit to 4 oz milk/day or use alternatives</div>
+                                <div class="food-name">Dairy Products</div>
+                                <div class="food-portion">Milk, cheese, yogurt - high phos</div>
+                                <div class="food-nutrients">Limit to 4 oz milk/day or use alternatives</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeLimit">Limit</span>
+                            <span class="badge avoid">Limit</span>
                         </div>
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodNuts">Nuts & Seeds</div>
-                                <div class="food-portion" data-i18n="portionNuts">Very high phosphorus</div>
-                                <div class="food-nutrients" data-i18n="nutrientsNuts">Max 1 oz per day if allowed</div>
+                                <div class="food-name">Nuts & Seeds</div>
+                                <div class="food-portion">Very high phosphorus</div>
+                                <div class="food-nutrients">Max 1 oz per day if allowed</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeLimit">Limit</span>
+                            <span class="badge avoid">Limit</span>
                         </div>
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodWholeGrains">Whole Grains</div>
-                                <div class="food-portion" data-i18n="portionWholeGrains">Brown rice, whole wheat</div>
-                                <div class="food-nutrients" data-i18n="nutrientsWholeGrains">Choose white/refined grains</div>
+                                <div class="food-name">Whole Grains</div>
+                                <div class="food-portion">Brown rice, whole wheat</div>
+                                <div class="food-nutrients">Choose white/refined grains</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeLimit">Limit</span>
+                            <span class="badge avoid">Limit</span>
                         </div>
                         <div class="food-item avoid">
                             <div>
-                                <div class="food-name" data-i18n="foodCola">Cola & Dark Sodas</div>
-                                <div class="food-portion" data-i18n="portionCola">Phosphate additives</div>
-                                <div class="food-nutrients" data-i18n="nutrientsCola">Choose clear sodas (occasionally)</div>
+                                <div class="food-name">Cola & Dark Sodas</div>
+                                <div class="food-portion">Phosphate additives</div>
+                                <div class="food-nutrients">Choose clear sodas (occasionally)</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeAvoid">Avoid</span>
+                            <span class="badge avoid">Avoid</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="food-category">
                     <div class="category-header" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);">
-                        <span data-i18n="catHighSodium">🧂 High-Sodium Foods (LIMIT)</span>
+                        <span>🧂 High-Sodium Foods (LIMIT)</span>
                         <span>➕</span>
                     </div>
                     <div class="category-content">
                         <div class="food-item moderate">
                             <div>
-                                <div class="food-name" data-i18n="foodProcessedMeats">Processed Meats</div>
-                                <div class="food-portion" data-i18n="portionProcessedMeats">Deli meat, bacon, sausage</div>
-                                <div class="food-nutrients" data-i18n="nutrientsProcessedMeats">Very high sodium, avoid</div>
+                                <div class="food-name">Processed Meats</div>
+                                <div class="food-portion">Deli meat, bacon, sausage</div>
+                                <div class="food-nutrients">Very high sodium, avoid</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeAvoid">Avoid</span>
+                            <span class="badge avoid">Avoid</span>
                         </div>
                         <div class="food-item moderate">
                             <div>
-                                <div class="food-name" data-i18n="foodCanned">Canned Foods</div>
-                                <div class="food-portion" data-i18n="portionCanned">Unless "no salt added"</div>
-                                <div class="food-nutrients" data-i18n="nutrientsCanned">Rinse well if using</div>
+                                <div class="food-name">Canned Foods</div>
+                                <div class="food-portion">Unless "no salt added"</div>
+                                <div class="food-nutrients">Rinse well if using</div>
                             </div>
-                            <span class="badge moderate" data-i18n="badgeLimit">Limit</span>
+                            <span class="badge moderate">Limit</span>
                         </div>
                         <div class="food-item moderate">
                             <div>
-                                <div class="food-name" data-i18n="foodRestaurant">Restaurant/Fast Food</div>
-                                <div class="food-portion" data-i18n="portionRestaurant">Often 2000-5000mg sodium</div>
-                                <div class="food-nutrients" data-i18n="nutrientsRestaurant">Request low-sodium preparation</div>
+                                <div class="food-name">Restaurant/Fast Food</div>
+                                <div class="food-portion">Often 2000-5000mg sodium</div>
+                                <div class="food-nutrients">Request low-sodium preparation</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeLimit">Limit</span>
+                            <span class="badge avoid">Limit</span>
                         </div>
                         <div class="food-item moderate">
                             <div>
-                                <div class="food-name" data-i18n="foodPickles">Pickles, Olives, Capers</div>
-                                <div class="food-portion" data-i18n="portionPickles">Very high sodium</div>
-                                <div class="food-nutrients" data-i18n="nutrientsPickles">Rinse or avoid</div>
+                                <div class="food-name">Pickles, Olives, Capers</div>
+                                <div class="food-portion">Very high sodium</div>
+                                <div class="food-nutrients">Rinse or avoid</div>
                             </div>
-                            <span class="badge avoid" data-i18n="badgeAvoid">Avoid</span>
+                            <span class="badge avoid">Avoid</span>
                         </div>
                     </div>
                 </div>
@@ -649,59 +619,59 @@
 
             <!-- DAILY TARGETS TAB -->
             <div id="daily-targets" class="tab-content">
-                <h2 data-i18n="dailyTargetsTitle">📊 Daily Nutritional Targets (Stage 3 CKD)</h2>
+                <h2>📊 Daily Nutritional Targets (Stage 3 CKD)</h2>
                 
                 <div class="daily-targets">
                     <div class="target-card">
-                        <div class="target-label" data-i18n="targetProteinLabel">Protein</div>
+                        <div class="target-label">Protein</div>
                         <div class="target-value">0.8-1.0 g/kg</div>
-                        <div class="target-label" data-i18n="targetPerDay">Per day (based on body weight)</div>
-                        <div style="margin-top: 10px; font-size: 0.9rem;" data-i18n="targetProteinExample">
+                        <div class="target-label">Per day (based on body weight)</div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;">
                             Example: 70kg person = 56-70g protein/day
                         </div>
                     </div>
 
                     <div class="target-card">
-                        <div class="target-label" data-i18n="targetSodiumLabel">Sodium</div>
+                        <div class="target-label">Sodium</div>
                         <div class="target-value">&lt; 2000 mg</div>
-                        <div class="target-label" data-i18n="targetPerDay">Per day</div>
-                        <div style="margin-top: 10px; font-size: 0.9rem;" data-i18n="targetSodiumNote">
+                        <div class="target-label">Per day</div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;">
                             Aim for 1500-2000mg (less is better)
                         </div>
                     </div>
 
                     <div class="target-card">
-                        <div class="target-label" data-i18n="targetPotassiumLabel">Potassium</div>
+                        <div class="target-label">Potassium</div>
                         <div class="target-value">2000-3000 mg</div>
-                        <div class="target-label" data-i18n="targetPotassiumNote">Per day (based on lab values)</div>
-                        <div style="margin-top: 10px; font-size: 0.9rem;" data-i18n="targetPotassiumAdjust">
+                        <div class="target-label">Per day (based on lab values)</div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;">
                             Adjust based on blood K+ levels
                         </div>
                     </div>
 
                     <div class="target-card">
-                        <div class="target-label" data-i18n="targetPhosphorusLabel">Phosphorus</div>
+                        <div class="target-label">Phosphorus</div>
                         <div class="target-value">800-1000 mg</div>
-                        <div class="target-label" data-i18n="targetPerDay">Per day</div>
-                        <div style="margin-top: 10px; font-size: 0.9rem;" data-i18n="targetPhosphorusNote">
+                        <div class="target-label">Per day</div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;">
                             Lower is better for kidney health
                         </div>
                     </div>
 
                     <div class="target-card">
-                        <div class="target-label" data-i18n="targetFluidsLabel">Fluids</div>
-                        <div class="target-value" data-i18n="targetFluidsValue">Individual</div>
-                        <div class="target-label" data-i18n="targetFluidsNote">Based on urine output</div>
-                        <div style="margin-top: 10px; font-size: 0.9rem;" data-i18n="targetFluidsExample">
+                        <div class="target-label">Fluids</div>
+                        <div class="target-value">Individual</div>
+                        <div class="target-label">Based on urine output</div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;">
                             Usually 1-2 liters/day unless restricted
                         </div>
                     </div>
 
                     <div class="target-card">
-                        <div class="target-label" data-i18n="targetCaloriesLabel">Calories</div>
+                        <div class="target-label">Calories</div>
                         <div class="target-value">30-35 cal/kg</div>
-                        <div class="target-label" data-i18n="targetCaloriesNote">Per day (maintain healthy weight)</div>
-                        <div style="margin-top: 10px; font-size: 0.9rem;" data-i18n="targetCaloriesExample">
+                        <div class="target-label">Per day (maintain healthy weight)</div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;">
                             Example: 70kg person = 2100-2450 cal/day
                         </div>
                     </div>
@@ -710,728 +680,158 @@
 
             <!-- MEAL PLAN TAB -->
             <div id="meal-plan" class="tab-content">
-                <h2 data-i18n="mealPlanTitle">🍽️ Sample Daily Meal Plan</h2>
-                <p style="margin-bottom: 20px; color: #666;" data-i18n="mealPlanNote">This is a general example. Adjust portions based on your individual needs.</p>
+                <h2>🍽️ Sample Daily Meal Plan</h2>
+                <p style="margin-bottom: 20px; color: #666;">This is a general example. Adjust portions based on your individual needs.</p>
 
                 <div class="meal-plan">
-                    <div class="meal-time" data-i18n="mealBreakfast">🌅 Breakfast</div>
+                    <div class="meal-time">🌅 Breakfast</div>
                     <ul class="meal-items">
-                        <li data-i18n="breakfastItem1">2 egg whites scrambled with bell peppers & onions (cooked in small amount of olive oil)</li>
-                        <li data-i18n="breakfastItem2">1 slice white toast with small amount of butter or jam</li>
-                        <li data-i18n="breakfastItem3">1/2 cup blueberries</li>
-                        <li data-i18n="breakfastItem4">1/2 cup apple juice (diluted with water)</li>
+                        <li>2 egg whites scrambled with bell peppers & onions (cooked in small amount of olive oil)</li>
+                        <li>1 slice white toast with small amount of butter or jam</li>
+                        <li>1/2 cup blueberries</li>
+                        <li>1/2 cup apple juice (diluted with water)</li>
                     </ul>
-                    <p style="margin-top: 10px; color: #666;"><strong data-i18n="approx">Approx:</strong> <span data-i18n="breakfastApprox">~15g protein, ~300mg sodium, ~350mg potassium</span></p>
+                    <p style="margin-top: 10px; color: #666;"><strong>Approx:</strong> ~15g protein, ~300mg sodium, ~350mg potassium</p>
                 </div>
 
                 <div class="meal-plan">
-                    <div class="meal-time" data-i18n="mealLunch">🥪 Lunch</div>
+                    <div class="meal-time">🥪 Lunch</div>
                     <ul class="meal-items">
-                        <li data-i18n="lunchItem1">3 oz grilled chicken breast (no salt added)</li>
-                        <li data-i18n="lunchItem2">1/2 cup white rice</li>
-                        <li data-i18n="lunchItem3">1/2 cup steamed green beans</li>
-                        <li data-i18n="lunchItem4">Small garden salad (lettuce, cucumber, bell pepper) with lemon juice</li>
-                        <li data-i18n="lunchItem5">1 small apple</li>
+                        <li>3 oz grilled chicken breast (no salt added)</li>
+                        <li>1/2 cup white rice</li>
+                        <li>1/2 cup steamed green beans</li>
+                        <li>Small garden salad (lettuce, cucumber, bell pepper) with lemon juice</li>
+                        <li>1 small apple</li>
                     </ul>
-                    <p style="margin-top: 10px; color: #666;"><strong data-i18n="approx">Approx:</strong> <span data-i18n="lunchApprox">~30g protein, ~200mg sodium, ~500mg potassium</span></p>
+                    <p style="margin-top: 10px; color: #666;"><strong>Approx:</strong> ~30g protein, ~200mg sodium, ~500mg potassium</p>
                 </div>
 
                 <div class="meal-plan">
-                    <div class="meal-time" data-i18n="mealDinner">🍲 Dinner</div>
+                    <div class="meal-time">🍲 Dinner</div>
                     <ul class="meal-items">
-                        <li data-i18n="dinnerItem1">3 oz baked salmon or cod (herbs & lemon, no salt)</li>
-                        <li data-i18n="dinnerItem2">1/2 cup pasta or white rice</li>
-                        <li data-i18n="dinnerItem3">1/2 cup cooked cauliflower</li>
-                        <li data-i18n="dinnerItem4">1/2 cup cooked cabbage</li>
-                        <li data-i18n="dinnerItem5">Small portion of watermelon (1/2 cup)</li>
+                        <li>3 oz baked salmon or cod (herbs & lemon, no salt)</li>
+                        <li>1/2 cup pasta or white rice</li>
+                        <li>1/2 cup cooked cauliflower</li>
+                        <li>1/2 cup cooked cabbage</li>
+                        <li>Small portion of watermelon (1/2 cup)</li>
                     </ul>
-                    <p style="margin-top: 10px; color: #666;"><strong data-i18n="approx">Approx:</strong> <span data-i18n="dinnerApprox">~25g protein, ~150mg sodium, ~600mg potassium</span></p>
+                    <p style="margin-top: 10px; color: #666;"><strong>Approx:</strong> ~25g protein, ~150mg sodium, ~600mg potassium</p>
                 </div>
 
                 <div class="meal-plan">
-                    <div class="meal-time" data-i18n="mealSnacks">🍪 Snacks (Choose 1-2 per day)</div>
+                    <div class="meal-time">🍪 Snacks (Choose 1-2 per day)</div>
                     <ul class="meal-items">
-                        <li data-i18n="snackItem1">15-20 grapes</li>
-                        <li data-i18n="snackItem2">5-6 unsalted crackers with small amount cream cheese</li>
-                        <li data-i18n="snackItem3">1/2 cup strawberries</li>
-                        <li data-i18n="snackItem4">Small portion of angel food cake</li>
-                        <li data-i18n="snackItem5">1 small pear</li>
+                        <li>15-20 grapes</li>
+                        <li>5-6 unsalted crackers with small amount cream cheese</li>
+                        <li>1/2 cup strawberries</li>
+                        <li>Small portion of angel food cake</li>
+                        <li>1 small pear</li>
                     </ul>
                 </div>
 
                 <div style="background: #e7f3ff; padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <h3 style="color: #2196F3; margin-bottom: 10px;" data-i18n="hydrationTitle">💧 Hydration Tips:</h3>
+                    <h3 style="color: #2196F3; margin-bottom: 10px;">💧 Hydration Tips:</h3>
                     <ul style="list-style: none;">
-                        <li data-i18n="hydrationTip1">✓ Drink water throughout the day (unless fluid restricted)</li>
-                        <li data-i18n="hydrationTip2">✓ Count all fluids: coffee, tea, juice, soup, ice cream</li>
-                        <li data-i18n="hydrationTip3">✓ Monitor urine output - should be light yellow</li>
-                        <li data-i18n="hydrationTip4">✓ Ask your doctor about your specific fluid needs</li>
+                        <li>✓ Drink water throughout the day (unless fluid restricted)</li>
+                        <li>✓ Count all fluids: coffee, tea, juice, soup, ice cream</li>
+                        <li>✓ Monitor urine output - should be light yellow</li>
+                        <li>✓ Ask your doctor about your specific fluid needs</li>
                     </ul>
                 </div>
             </div>
 
             <!-- TIPS TAB -->
             <div id="tips" class="tab-content">
-                <h2 data-i18n="tipsTitle">💡 Important Tips & Guidelines</h2>
+                <h2>💡 Important Tips & Guidelines</h2>
 
-                <h3 style="margin-top: 20px; margin-bottom: 15px;" data-i18n="cookingTipsHeader">🍳 Cooking Tips</h3>
+                <h3 style="margin-top: 20px; margin-bottom: 15px;">🍳 Cooking Tips</h3>
                 <ul class="tips-list">
-                    <li><strong data-i18n="tipLeachingTitle">Leaching Potassium:</strong> <span data-i18n="tipLeaching">Soak high-K vegetables in warm water for 2+ hours, then double-boil to reduce potassium by ~50%</span></li>
-                    <li><strong data-i18n="tipSeasonTitle">Season Without Salt:</strong> <span data-i18n="tipSeason">Use herbs (basil, oregano, thyme), spices (garlic powder, onion powder), lemon juice, vinegar</span></li>
-                    <li><strong data-i18n="tipFreshTitle">Choose Fresh or Frozen:</strong> <span data-i18n="tipFresh">Avoid canned foods (high sodium). If using canned, rinse thoroughly</span></li>
-                    <li><strong data-i18n="tipLabelsTitle">Read Labels:</strong> <span data-i18n="tipLabels">Check for phosphate additives (anything with "phos" in the name)</span></li>
+                    <li><strong>Leaching Potassium:</strong> Soak high-K vegetables in warm water for 2+ hours, then double-boil to reduce potassium by ~50%</li>
+                    <li><strong>Season Without Salt:</strong> Use herbs (basil, oregano, thyme), spices (garlic powder, onion powder), lemon juice, vinegar</li>
+                    <li><strong>Choose Fresh or Frozen:</strong> Avoid canned foods (high sodium). If using canned, rinse thoroughly</li>
+                    <li><strong>Read Labels:</strong> Check for phosphate additives (anything with "phos" in the name)</li>
                 </ul>
 
-                <h3 style="margin-top: 30px; margin-bottom: 15px;" data-i18n="eatingOutHeader">🍽️ Eating Out Tips</h3>
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">🍽️ Eating Out Tips</h3>
                 <ul class="tips-list">
-                    <li><strong data-i18n="tipNoSaltTitle">Request No Salt:</strong> <span data-i18n="tipNoSalt">Ask for food prepared without salt or sauce on the side</span></li>
-                    <li><strong data-i18n="tipGrilledTitle">Grilled is Better:</strong> <span data-i18n="tipGrilled">Choose grilled, baked, or steamed instead of fried</span></li>
-                    <li><strong data-i18n="tipSkipExtrasTitle">Skip the Extras:</strong> <span data-i18n="tipSkipExtras">Avoid pickles, olives, cheese, bacon</span></li>
-                    <li><strong data-i18n="tipPortionTitle">Portion Control:</strong> <span data-i18n="tipPortion">Ask for half portions or take leftovers home</span></li>
+                    <li><strong>Request No Salt:</strong> Ask for food prepared without salt or sauce on the side</li>
+                    <li><strong>Grilled is Better:</strong> Choose grilled, baked, or steamed instead of fried</li>
+                    <li><strong>Skip the Extras:</strong> Avoid pickles, olives, cheese, bacon</li>
+                    <li><strong>Portion Control:</strong> Ask for half portions or take leftovers home</li>
                 </ul>
 
-                <h3 style="margin-top: 30px; margin-bottom: 15px;" data-i18n="remindersHeader">📝 Important Reminders</h3>
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">📝 Important Reminders</h3>
                 <ul class="tips-list">
-                    <li><strong data-i18n="reminderDietitianTitle">Work with a Dietitian:</strong> <span data-i18n="reminderDietitian">A renal dietitian can personalize your plan based on your labs</span></li>
-                    <li><strong data-i18n="reminderLabsTitle">Monitor Your Labs:</strong> <span data-i18n="reminderLabs">Potassium, phosphorus, and creatinine levels guide your diet</span></li>
-                    <li><strong data-i18n="reminderMedsTitle">Medication Timing:</strong> <span data-i18n="reminderMeds">Take phosphate binders with meals if prescribed</span></li>
-                    <li><strong data-i18n="reminderConsistentTitle">Stay Consistent:</strong> <span data-i18n="reminderConsistent">Small daily choices add up to better kidney health</span></li>
-                    <li><strong data-i18n="reminderProteinTitle">Don't Overdo Protein:</strong> <span data-i18n="reminderProtein">More protein = more kidney work. Stick to your target!</span></li>
+                    <li><strong>Work with a Dietitian:</strong> A renal dietitian can personalize your plan based on your labs</li>
+                    <li><strong>Monitor Your Labs:</strong> Potassium, phosphorus, and creatinine levels guide your diet</li>
+                    <li><strong>Medication Timing:</strong> Take phosphate binders with meals if prescribed</li>
+                    <li><strong>Stay Consistent:</strong> Small daily choices add up to better kidney health</li>
+                    <li><strong>Don't Overdo Protein:</strong> More protein = more kidney work. Stick to your target!</li>
                 </ul>
 
-                <h3 style="margin-top: 30px; margin-bottom: 15px;" data-i18n="watchOutHeader">⚠️ Watch Out For</h3>
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">⚠️ Watch Out For</h3>
                 <ul class="tips-list">
-                    <li><strong data-i18n="watchSaltSubTitle">Salt Substitutes:</strong> <span data-i18n="watchSaltSub">Often contain potassium chloride - AVOID unless approved by doctor</span></li>
-                    <li><strong data-i18n="watchHealthyTitle">"Healthy" Foods:</strong> <span data-i18n="watchHealthy">Avocado, quinoa, kale are high in potassium/phosphorus</span></li>
-                    <li><strong data-i18n="watchSupplementsTitle">Supplements:</strong> <span data-i18n="watchSupplements">Multivitamins often have too much phosphorus/potassium. Check first!</span></li>
-                    <li><strong data-i18n="watchProteinPowderTitle">Protein Powders:</strong> <span data-i18n="watchProteinPowder">Often very high in phosphorus. Consult dietitian first</span></li>
+                    <li><strong>Salt Substitutes:</strong> Often contain potassium chloride - AVOID unless approved by doctor</li>
+                    <li><strong>"Healthy" Foods:</strong> Avocado, quinoa, kale are high in potassium/phosphorus</li>
+                    <li><strong>Supplements:</strong> Multivitamins often have too much phosphorus/potassium. Check first!</li>
+                    <li><strong>Protein Powders:</strong> Often very high in phosphorus. Consult dietitian first</li>
                 </ul>
 
                 <div style="background: #d4edda; padding: 20px; border-radius: 10px; margin-top: 30px; border-left: 4px solid #28a745;">
-                    <h3 style="color: #155724; margin-bottom: 10px;" data-i18n="encouragementTitle">✅ You've Got This!</h3>
-                    <p style="color: #155724;" data-i18n="encouragementText">Managing IgA Nephropathy with diet takes effort, but you're taking control of your kidney health. Work closely with your healthcare team, track your progress, and don't be afraid to ask questions. Small changes make a big difference!</p>
+                    <h3 style="color: #155724; margin-bottom: 10px;">✅ You've Got This!</h3>
+                    <p style="color: #155724;">Managing IgA Nephropathy with diet takes effort, but you're taking control of your kidney health. Work closely with your healthcare team, track your progress, and don't be afraid to ask questions. Small changes make a big difference!</p>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Translation data
-        const translations = {
-            en: {
-                mainTitle: "🥗 IgA Nephropathy Dietary Guide",
-                subtitle: "Stage 3 CKD Nutrition Plan",
-                disclaimerTitle: "⚠️ Medical Disclaimer:",
-                disclaimerText: "This is educational information only. Always consult with your healthcare provider, nephrologist, and registered dietitian before making dietary changes. Individual needs vary based on lab values, medications, and overall health status.",
-                searchPlaceholder: "🔍 Search foods...",
-                langButton: "🌐 中文",
-                
-                // Tabs
-                tabGoodFoods: "✅ Foods to Eat",
-                tabAvoidFoods: "❌ Foods to Limit/Avoid",
-                tabDailyTargets: "📊 Daily Targets",
-                tabMealPlan: "🍽️ Sample Meal Plan",
-                tabTips: "💡 Tips & Guidelines",
-                
-                // Good Foods
-                goodFoodsTitle: "✅ Kidney-Friendly Foods for Stage 3 IgAN/CKD",
-                catProtein: "🥩 Lean Proteins",
-                catVegetables: "🥒 Low-Potassium Vegetables",
-                catFruits: "🍎 Low-Potassium Fruits",
-                catGrains: "🍚 Kidney-Friendly Grains",
-                
-                // Food items
-                foodChicken: "Skinless Chicken Breast",
-                portionChicken: "Portion: 3 oz (85g) cooked",
-                nutrientsChicken: "Low in phosphorus, moderate protein",
-                
-                foodFish: "Fish (Salmon, Cod, Tilapia)",
-                portionFish: "Portion: 3 oz (85g) cooked",
-                nutrientsFish: "Omega-3 rich, heart-healthy",
-                
-                foodEggWhites: "Egg Whites",
-                portionEggWhites: "Portion: 2-3 egg whites",
-                nutrientsEggWhites: "High protein, low phosphorus",
-                
-                foodCauliflower: "Cauliflower",
-                portionCauliflower: "Portion: 1/2 cup cooked",
-                nutrientsCauliflower: "Low K+, high in fiber",
-                
-                foodGreenBeans: "Green Beans",
-                portionGreenBeans: "Portion: 1/2 cup cooked",
-                nutrientsGreenBeans: "Low K+, good for CKD",
-                
-                foodCabbage: "Cabbage",
-                portionCabbage: "Portion: 1/2 cup cooked",
-                nutrientsCabbage: "Very low K+, anti-inflammatory",
-                
-                foodBellPeppers: "Bell Peppers",
-                portionBellPeppers: "Portion: 1/2 cup raw",
-                nutrientsBellPeppers: "Low K+, high vitamin C",
-                
-                foodApples: "Apples",
-                portionApples: "Portion: 1 small apple",
-                nutrientsApples: "Low K+, high fiber",
-                
-                foodBlueberries: "Blueberries",
-                portionBlueberries: "Portion: 1/2 cup",
-                nutrientsBlueberries: "Antioxidant-rich, low K+",
-                
-                foodGrapes: "Grapes",
-                portionGrapes: "Portion: 15-20 grapes",
-                nutrientsGrapes: "Low K+, hydrating",
-                
-                foodStrawberries: "Strawberries",
-                portionStrawberries: "Portion: 1/2 cup",
-                nutrientsStrawberries: "Low K+, vitamin C",
-                
-                foodWhiteRice: "White Rice",
-                portionWhiteRice: "Portion: 1/2 cup cooked",
-                nutrientsWhiteRice: "Lower phosphorus than brown rice",
-                
-                foodWhiteBread: "White Bread",
-                portionWhiteBread: "Portion: 1 slice",
-                nutrientsWhiteBread: "Lower phos & K+ than whole wheat",
-                
-                foodPasta: "Plain Pasta",
-                portionPasta: "Portion: 1/2 cup cooked",
-                nutrientsPasta: "Energy source, low K+",
-                
-                // Avoid Foods
-                avoidFoodsTitle: "❌ Foods to Limit or Avoid (Stage 3 CKD)",
-                catHighPotassium: "🥔 High-Potassium Foods (AVOID)",
-                catHighPhosphorus: "🥛 High-Phosphorus Foods (LIMIT)",
-                catHighSodium: "🧂 High-Sodium Foods (LIMIT)",
-                
-                foodBananas: "Bananas",
-                portionBananas: "~420mg K+ per medium banana",
-                nutrientsBananas: "Choose apples or berries instead",
-                
-                foodPotatoes: "Potatoes (esp. with skin)",
-                portionPotatoes: "~900mg K+ per medium potato",
-                nutrientsPotatoes: "Double-boil if eating occasionally",
-                
-                foodTomatoes: "Tomatoes & Tomato Products",
-                portionTomatoes: "High K+, esp. sauces",
-                nutrientsTomatoes: "Limit to small portions",
-                
-                foodOranges: "Oranges & Orange Juice",
-                portionOranges: "Very high K+",
-                nutrientsOranges: "Choose apple juice instead",
-                
-                foodSpinach: "Spinach & Swiss Chard",
-                portionSpinach: "Very high K+",
-                nutrientsSpinach: "Choose cabbage or lettuce",
-                
-                foodDairy: "Dairy Products",
-                portionDairy: "Milk, cheese, yogurt - high phos",
-                nutrientsDairy: "Limit to 4 oz milk/day or use alternatives",
-                
-                foodNuts: "Nuts & Seeds",
-                portionNuts: "Very high phosphorus",
-                nutrientsNuts: "Max 1 oz per day if allowed",
-                
-                foodWholeGrains: "Whole Grains",
-                portionWholeGrains: "Brown rice, whole wheat",
-                nutrientsWholeGrains: "Choose white/refined grains",
-                
-                foodCola: "Cola & Dark Sodas",
-                portionCola: "Phosphate additives",
-                nutrientsCola: "Choose clear sodas (occasionally)",
-                
-                foodProcessedMeats: "Processed Meats",
-                portionProcessedMeats: "Deli meat, bacon, sausage",
-                nutrientsProcessedMeats: "Very high sodium, avoid",
-                
-                foodCanned: "Canned Foods",
-                portionCanned: "Unless \"no salt added\"",
-                nutrientsCanned: "Rinse well if using",
-                
-                foodRestaurant: "Restaurant/Fast Food",
-                portionRestaurant: "Often 2000-5000mg sodium",
-                nutrientsRestaurant: "Request low-sodium preparation",
-                
-                foodPickles: "Pickles, Olives, Capers",
-                portionPickles: "Very high sodium",
-                nutrientsPickles: "Rinse or avoid",
-                
-                // Badges
-                badgeGood: "Good",
-                badgeAvoid: "Avoid",
-                badgeLimit: "Limit",
-                
-                // Daily Targets
-                dailyTargetsTitle: "📊 Daily Nutritional Targets (Stage 3 CKD)",
-                targetProteinLabel: "Protein",
-                targetSodiumLabel: "Sodium",
-                targetPotassiumLabel: "Potassium",
-                targetPhosphorusLabel: "Phosphorus",
-                targetFluidsLabel: "Fluids",
-                targetCaloriesLabel: "Calories",
-                targetPerDay: "Per day (based on body weight)",
-                targetProteinExample: "Example: 70kg person = 56-70g protein/day",
-                targetSodiumNote: "Aim for 1500-2000mg (less is better)",
-                targetPotassiumNote: "Per day (based on lab values)",
-                targetPotassiumAdjust: "Adjust based on blood K+ levels",
-                targetPhosphorusNote: "Lower is better for kidney health",
-                targetFluidsValue: "Individual",
-                targetFluidsNote: "Based on urine output",
-                targetFluidsExample: "Usually 1-2 liters/day unless restricted",
-                targetCaloriesNote: "Per day (maintain healthy weight)",
-                targetCaloriesExample: "Example: 70kg person = 2100-2450 cal/day",
-                
-                // Meal Plan
-                mealPlanTitle: "🍽️ Sample Daily Meal Plan",
-                mealPlanNote: "This is a general example. Adjust portions based on your individual needs.",
-                mealBreakfast: "🌅 Breakfast",
-                mealLunch: "🥪 Lunch",
-                mealDinner: "🍲 Dinner",
-                mealSnacks: "🍪 Snacks (Choose 1-2 per day)",
-                
-                breakfastItem1: "2 egg whites scrambled with bell peppers & onions (cooked in small amount of olive oil)",
-                breakfastItem2: "1 slice white toast with small amount of butter or jam",
-                breakfastItem3: "1/2 cup blueberries",
-                breakfastItem4: "1/2 cup apple juice (diluted with water)",
-                breakfastApprox: "~15g protein, ~300mg sodium, ~350mg potassium",
-                
-                lunchItem1: "3 oz grilled chicken breast (no salt added)",
-                lunchItem2: "1/2 cup white rice",
-                lunchItem3: "1/2 cup steamed green beans",
-                lunchItem4: "Small garden salad (lettuce, cucumber, bell pepper) with lemon juice",
-                lunchItem5: "1 small apple",
-                lunchApprox: "~30g protein, ~200mg sodium, ~500mg potassium",
-                
-                dinnerItem1: "3 oz baked salmon or cod (herbs & lemon, no salt)",
-                dinnerItem2: "1/2 cup pasta or white rice",
-                dinnerItem3: "1/2 cup cooked cauliflower",
-                dinnerItem4: "1/2 cup cooked cabbage",
-                dinnerItem5: "Small portion of watermelon (1/2 cup)",
-                dinnerApprox: "~25g protein, ~150mg sodium, ~600mg potassium",
-                
-                snackItem1: "15-20 grapes",
-                snackItem2: "5-6 unsalted crackers with small amount cream cheese",
-                snackItem3: "1/2 cup strawberries",
-                snackItem4: "Small portion of angel food cake",
-                snackItem5: "1 small pear",
-                
-                approx: "Approx:",
-                
-                hydrationTitle: "💧 Hydration Tips:",
-                hydrationTip1: "✓ Drink water throughout the day (unless fluid restricted)",
-                hydrationTip2: "✓ Count all fluids: coffee, tea, juice, soup, ice cream",
-                hydrationTip3: "✓ Monitor urine output - should be light yellow",
-                hydrationTip4: "✓ Ask your doctor about your specific fluid needs",
-                
-                // Tips
-                tipsTitle: "💡 Important Tips & Guidelines",
-                cookingTipsHeader: "🍳 Cooking Tips",
-                eatingOutHeader: "🍽️ Eating Out Tips",
-                remindersHeader: "📝 Important Reminders",
-                watchOutHeader: "⚠️ Watch Out For",
-                
-                tipLeachingTitle: "Leaching Potassium:",
-                tipLeaching: "Soak high-K vegetables in warm water for 2+ hours, then double-boil to reduce potassium by ~50%",
-                tipSeasonTitle: "Season Without Salt:",
-                tipSeason: "Use herbs (basil, oregano, thyme), spices (garlic powder, onion powder), lemon juice, vinegar",
-                tipFreshTitle: "Choose Fresh or Frozen:",
-                tipFresh: "Avoid canned foods (high sodium). If using canned, rinse thoroughly",
-                tipLabelsTitle: "Read Labels:",
-                tipLabels: "Check for phosphate additives (anything with \"phos\" in the name)",
-                
-                tipNoSaltTitle: "Request No Salt:",
-                tipNoSalt: "Ask for food prepared without salt or sauce on the side",
-                tipGrilledTitle: "Grilled is Better:",
-                tipGrilled: "Choose grilled, baked, or steamed instead of fried",
-                tipSkipExtrasTitle: "Skip the Extras:",
-                tipSkipExtras: "Avoid pickles, olives, cheese, bacon",
-                tipPortionTitle: "Portion Control:",
-                tipPortion: "Ask for half portions or take leftovers home",
-                
-                reminderDietitianTitle: "Work with a Dietitian:",
-                reminderDietitian: "A renal dietitian can personalize your plan based on your labs",
-                reminderLabsTitle: "Monitor Your Labs:",
-                reminderLabs: "Potassium, phosphorus, and creatinine levels guide your diet",
-                reminderMedsTitle: "Medication Timing:",
-                reminderMeds: "Take phosphate binders with meals if prescribed",
-                reminderConsistentTitle: "Stay Consistent:",
-                reminderConsistent: "Small daily choices add up to better kidney health",
-                reminderProteinTitle: "Don't Overdo Protein:",
-                reminderProtein: "More protein = more kidney work. Stick to your target!",
-                
-                watchSaltSubTitle: "Salt Substitutes:",
-                watchSaltSub: "Often contain potassium chloride - AVOID unless approved by doctor",
-                watchHealthyTitle: "\"Healthy\" Foods:",
-                watchHealthy: "Avocado, quinoa, kale are high in potassium/phosphorus",
-                watchSupplementsTitle: "Supplements:",
-                watchSupplements: "Multivitamins often have too much phosphorus/potassium. Check first!",
-                watchProteinPowderTitle: "Protein Powders:",
-                watchProteinPowder: "Often very high in phosphorus. Consult dietitian first",
-                
-                encouragementTitle: "✅ You've Got This!",
-                encouragementText: "Managing IgA Nephropathy with diet takes effort, but you're taking control of your kidney health. Work closely with your healthcare team, track your progress, and don't be afraid to ask questions. Small changes make a big difference!"
-            },
-            zh: {
-                mainTitle: "🥗 IgA肾病饮食指南",
-                subtitle: "慢性肾病3期营养计划",
-                disclaimerTitle: "⚠️ 医疗免责声明：",
-                disclaimerText: "本内容仅供教育参考。在调整饮食前，请务必咨询您的医疗保健提供者、肾脏科医生和注册营养师。个人需求因化验值、药物和整体健康状况而异。",
-                searchPlaceholder: "🔍 搜索食物...",
-                langButton: "🌐 EN",
-                
-                // Tabs
-                tabGoodFoods: "✅ 推荐食物",
-                tabAvoidFoods: "❌ 限制/避免食物",
-                tabDailyTargets: "📊 每日目标",
-                tabMealPlan: "🍽️ 示例餐单",
-                tabTips: "💡 提示与指南",
-                
-                // Good Foods
-                goodFoodsTitle: "✅ 适合3期IgAN/CKD的护肾食物",
-                catProtein: "🥩 瘦肉蛋白质",
-                catVegetables: "🥒 低钾蔬菜",
-                catFruits: "🍎 低钾水果",
-                catGrains: "🍚 护肾谷物",
-                
-                // Food items
-                foodChicken: "去皮鸡胸肉",
-                portionChicken: "份量：3盎司（85克）熟重",
-                nutrientsChicken: "低磷、适量蛋白质",
-                
-                foodFish: "鱼类（三文鱼、鳕鱼、罗非鱼）",
-                portionFish: "份量：3盎司（85克）熟重",
-                nutrientsFish: "富含Omega-3，护心",
-                
-                foodEggWhites: "蛋清",
-                portionEggWhites: "份量：2-3个蛋清",
-                nutrientsEggWhites: "高蛋白、低磷",
-                
-                foodCauliflower: "花椰菜",
-                portionCauliflower: "份量：半杯熟",
-                nutrientsCauliflower: "低钾、高纤维",
-                
-                foodGreenBeans: "四季豆",
-                portionGreenBeans: "份量：半杯熟",
-                nutrientsGreenBeans: "低钾、对CKD好",
-                
-                foodCabbage: "卷心菜",
-                portionCabbage: "份量：半杯熟",
-                nutrientsCabbage: "极低钾、抗炎",
-                
-                foodBellPeppers: "甜椒",
-                portionBellPeppers: "份量：半杯生",
-                nutrientsBellPeppers: "低钾、高维C",
-                
-                foodApples: "苹果",
-                portionApples: "份量：1个小苹果",
-                nutrientsApples: "低钾、高纤维",
-                
-                foodBlueberries: "蓝莓",
-                portionBlueberries: "份量：半杯",
-                nutrientsBlueberries: "抗氧化、低钾",
-                
-                foodGrapes: "葡萄",
-                portionGrapes: "份量：15-20颗",
-                nutrientsGrapes: "低钾、补水",
-                
-                foodStrawberries: "草莓",
-                portionStrawberries: "份量：半杯",
-                nutrientsStrawberries: "低钾、维C",
-                
-                foodWhiteRice: "白米饭",
-                portionWhiteRice: "份量：半杯熟",
-                nutrientsWhiteRice: "磷含量比糙米低",
-                
-                foodWhiteBread: "白面包",
-                portionWhiteBread: "份量：1片",
-                nutrientsWhiteBread: "磷和钾比全麦低",
-                
-                foodPasta: "白面条",
-                portionPasta: "份量：半杯熟",
-                nutrientsPasta: "能量来源、低钾",
-                
-                // Avoid Foods
-                avoidFoodsTitle: "❌ 限制或避免的食物（3期CKD）",
-                catHighPotassium: "🥔 高钾食物（避免）",
-                catHighPhosphorus: "🥛 高磷食物（限制）",
-                catHighSodium: "🧂 高钠食物（限制）",
-                
-                foodBananas: "香蕉",
-                portionBananas: "中等香蕉含钾~420毫克",
-                nutrientsBananas: "选苹果或浆果替代",
-                
-                foodPotatoes: "土豆（尤其带皮）",
-                portionPotatoes: "中等土豆含钾~900毫克",
-                nutrientsPotatoes: "偶尔吃需二次煮沸",
-                
-                foodTomatoes: "番茄及番茄制品",
-                portionTomatoes: "高钾，酱料尤甚",
-                nutrientsTomatoes: "限小份量",
-                
-                foodOranges: "橙子及橙汁",
-                portionOranges: "极高钾",
-                nutrientsOranges: "选苹果汁替代",
-                
-                foodSpinach: "菠菜与甜菜叶",
-                portionSpinach: "极高钾",
-                nutrientsSpinach: "选卷心菜或生菜",
-                
-                foodDairy: "乳制品",
-                portionDairy: "牛奶、奶酪、酸奶 - 高磷",
-                nutrientsDairy: "限制牛奶每日4盎司或用替代品",
-                
-                foodNuts: "坚果与种子",
-                portionNuts: "极高磷",
-                nutrientsNuts: "若允许每日最多1盎司",
-                
-                foodWholeGrains: "全谷物",
-                portionWholeGrains: "糙米、全麦",
-                nutrientsWholeGrains: "选精制谷物",
-                
-                foodCola: "可乐及深色汽水",
-                portionCola: "含磷酸盐添加剂",
-                nutrientsCola: "选透明汽水（偶尔）",
-                
-                foodProcessedMeats: "加工肉类",
-                portionProcessedMeats: "午餐肉、培根、香肠",
-                nutrientsProcessedMeats: "极高钠，避免",
-                
-                foodCanned: "罐头食品",
-                portionCanned: "除非"无盐添加"",
-                nutrientsCanned: "使用前彻底冲洗",
-                
-                foodRestaurant: "餐厅/快餐",
-                portionRestaurant: "通常含2000-5000毫克钠",
-                nutrientsRestaurant: "要求低钠烹调",
-                
-                foodPickles: "泡菜、橄榄、酸豆",
-                portionPickles: "极高钠",
-                nutrientsPickles: "冲洗或避免",
-                
-                // Badges
-                badgeGood: "推荐",
-                badgeAvoid: "避免",
-                badgeLimit: "限制",
-                
-                // Daily Targets
-                dailyTargetsTitle: "📊 每日营养目标（3期CKD）",
-                targetProteinLabel: "蛋白质",
-                targetSodiumLabel: "钠",
-                targetPotassiumLabel: "钾",
-                targetPhosphorusLabel: "磷",
-                targetFluidsLabel: "液体",
-                targetCaloriesLabel: "热量",
-                targetPerDay: "每日（根据体重）",
-                targetProteinExample: "例：70公斤 = 56-70克蛋白质/日",
-                targetSodiumNote: "目标1500-2000毫克（越少越好）",
-                targetPotassiumNote: "每日（根据化验值）",
-                targetPotassiumAdjust: "根据血钾水平调整",
-                targetPhosphorusNote: "越低对肾脏越好",
-                targetFluidsValue: "个体化",
-                targetFluidsNote: "根据尿量",
-                targetFluidsExample: "通常1-2升/日，除非限制",
-                targetCaloriesNote: "每日（保持健康体重）",
-                targetCaloriesExample: "例：70公斤 = 2100-2450卡/日",
-                
-                // Meal Plan
-                mealPlanTitle: "🍽️ 示例每日餐单",
-                mealPlanNote: "此为通用示例。请根据个人需求调整份量。",
-                mealBreakfast: "🌅 早餐",
-                mealLunch: "🥪 午餐",
-                mealDinner: "🍲 晚餐",
-                mealSnacks: "🍪 零食（每日选1-2项）",
-                
-                breakfastItem1: "2个蛋清炒甜椒和洋葱（少量橄榄油）",
-                breakfastItem2: "1片白面包配少量黄油或果酱",
-                breakfastItem3: "半杯蓝莓",
-                breakfastItem4: "半杯苹果汁（加水稀释）",
-                breakfastApprox: "约15克蛋白质、300毫克钠、350毫克钾",
-                
-                lunchItem1: "3盎司烤鸡胸（无盐）",
-                lunchItem2: "半杯白米饭",
-                lunchItem3: "半杯蒸四季豆",
-                lunchItem4: "小份沙拉（生菜、黄瓜、甜椒）配柠檬汁",
-                lunchItem5: "1个小苹果",
-                lunchApprox: "约30克蛋白质、200毫克钠、500毫克钾",
-                
-                dinnerItem1: "3盎司烤三文鱼或鳕鱼（香草柠檬，无盐）",
-                dinnerItem2: "半杯意面或白米",
-                dinnerItem3: "半杯熟花椰菜",
-                dinnerItem4: "半杯熟卷心菜",
-                dinnerItem5: "小份西瓜（半杯）",
-                dinnerApprox: "约25克蛋白质、150毫克钠、600毫克钾",
-                
-                snackItem1: "15-20颗葡萄",
-                snackItem2: "5-6片无盐饼干配少量奶油奶酪",
-                snackItem3: "半杯草莓",
-                snackItem4: "小份天使蛋糕",
-                snackItem5: "1个小梨",
-                
-                approx: "约：",
-                
-                hydrationTitle: "💧 补水提示：",
-                hydrationTip1: "✓ 全天饮水（除非限液）",
-                hydrationTip2: "✓ 计算所有液体：咖啡、茶、果汁、汤、冰淇淋",
-                hydrationTip3: "✓ 监测尿液颜色 - 应为淡黄色",
-                hydrationTip4: "✓ 咨询医生了解您的具体液体需求",
-                
-                // Tips
-                tipsTitle: "💡 重要提示与指南",
-                cookingTipsHeader: "🍳 烹饪技巧",
-                eatingOutHeader: "🍽️ 外出就餐技巧",
-                remindersHeader: "📝 重要提醒",
-                watchOutHeader: "⚠️ 注意事项",
-                
-                tipLeachingTitle: "去钾浸泡法：",
-                tipLeaching: "高钾蔬菜用温水浸泡2+小时，然后二次煮沸可去除约50%的钾",
-                tipSeasonTitle: "无盐调味：",
-                tipSeason: "使用香草（罗勒、牛至、百里香）、香料（蒜粉、洋葱粉）、柠檬汁、醋",
-                tipFreshTitle: "选新鲜或冷冻：",
-                tipFresh: "避免罐头（高钠）。若用罐头需彻底冲洗",
-                tipLabelsTitle: "阅读标签：",
-                tipLabels: "检查磷酸盐添加剂（名称中含"磷"字）",
-                
-                tipNoSaltTitle: "要求无盐：",
-                tipNoSalt: "要求无盐烹调或酱汁另上",
-                tipGrilledTitle: "烤制更好：",
-                tipGrilled: "选烤、蒸或焗，避免油炸",
-                tipSkipExtrasTitle: "跳过配菜：",
-                tipSkipExtras: "避免泡菜、橄榄、奶酪、培根",
-                tipPortionTitle: "控制份量：",
-                tipPortion: "要求半份或打包带走",
-                
-                reminderDietitianTitle: "咨询营养师：",
-                reminderDietitian: "肾脏营养师可根据您的化验值定制方案",
-                reminderLabsTitle: "监测化验值：",
-                reminderLabs: "钾、磷、肌酐水平指导您的饮食",
-                reminderMedsTitle: "用药时间：",
-                reminderMeds: "若处方磷结合剂需随餐服用",
-                reminderConsistentTitle: "保持一致：",
-                reminderConsistent: "每日小改变累积成更好的肾脏健康",
-                reminderProteinTitle: "别过量蛋白：",
-                reminderProtein: "更多蛋白 = 肾脏更累。坚持目标！",
-                
-                watchSaltSubTitle: "盐替代品：",
-                watchSaltSub: "常含氯化钾 - 除非医生批准否则避免",
-                watchHealthyTitle: ""健康"食物：",
-                watchHealthy: "牛油果、藜麦、羽衣甘蓝钾/磷高",
-                watchSupplementsTitle: "营养补充剂：",
-                watchSupplements: "复合维生素常含过多磷/钾。先检查！",
-                watchProteinPowderTitle: "蛋白粉：",
-                watchProteinPowder: "常含极高磷。先咨询营养师",
-                
-                encouragementTitle: "✅ 您能做到！",
-                encouragementText: "用饮食管理IgA肾病需要努力，但您正在掌控自己的肾脏健康。与医疗团队紧密合作，跟踪进展，别怕提问。小改变成就大不同！"
-            }
-        };
-
-        let currentLang = 'en';
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'zh' : 'en';
-            applyTranslations();
-        }
-
-        function applyTranslations() {
-            try {
-                const t = translations[currentLang];
-                
-                // Update all elements with data-i18n attribute
-                document.querySelectorAll('[data-i18n]').forEach(element => {
-                    const key = element.getAttribute('data-i18n');
-                    if (t[key]) {
-                        element.textContent = t[key];
-                    }
-                });
-                
-                // Update specific elements - with error handling
-                const elements = {
-                    'mainTitle': t.mainTitle,
-                    'subtitle': t.subtitle,
-                    'disclaimerTitle': t.disclaimerTitle,
-                    'disclaimerText': t.disclaimerText,
-                    'langButton': t.langButton
-                };
-                
-                for (let [id, text] of Object.entries(elements)) {
-                    const el = document.getElementById(id);
-                    if (el) el.textContent = text;
-                }
-                
-                const searchInput = document.getElementById('searchInput');
-                if (searchInput) searchInput.placeholder = t.searchPlaceholder;
-            } catch (error) {
-                console.error('Translation error:', error);
-            }
-        }
-
-        function showTab(tabId, clickedElement) {
-            try {
-                console.log('Switching to tab:', tabId);
-                
-                // Hide all tab content
-                document.querySelectorAll('.tab-content').forEach(tab => {
-                    tab.classList.remove('active');
-                });
-                
-                // Remove active from all tab buttons
-                document.querySelectorAll('.tab').forEach(tab => {
-                    tab.classList.remove('active');
-                });
-
-                // Show selected tab content
-                const selectedTab = document.getElementById(tabId);
-                if (selectedTab) {
-                    selectedTab.classList.add('active');
-                } else {
-                    console.error('Tab not found:', tabId);
-                }
-                
-                // Activate clicked button
-                if (clickedElement) {
-                    clickedElement.classList.add('active');
-                }
-            } catch (error) {
-                console.error('Tab switching error:', error);
-            }
-        }
-
-        // Initialize after DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, initializing...');
+        function showTab(tabId, btn) {
+            console.log('showTab called:', tabId);
             
-            // Search functionality
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.addEventListener('input', function(e) {
-                    const searchTerm = e.target.value.toLowerCase();
-                    const foodItems = document.querySelectorAll('.food-item');
-
-                    foodItems.forEach(item => {
-                        const text = item.textContent.toLowerCase();
-                        if (text.includes(searchTerm)) {
-                            item.style.display = 'flex';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            }
-
-            // Category collapse/expand
-            document.querySelectorAll('.category-header').forEach(header => {
-                header.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    if (content.style.display === 'none') {
-                        content.style.display = 'block';
-                        this.querySelector('span:last-child').textContent = '➕';
-                    } else {
-                        content.style.display = 'none';
-                        this.querySelector('span:last-child').textContent = '➖';
-                    }
-                });
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
             });
-            
-            console.log('Initialization complete');
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            if (btn) {
+                btn.classList.add('active');
+            }
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const foodItems = document.querySelectorAll('.food-item');
+
+            foodItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Category collapse/expand
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                    this.querySelector('span:last-child').textContent = '➕';
+                } else {
+                    content.style.display = 'none';
+                    this.querySelector('span:last-child').textContent = '➖';
+                }
+            });
         });
     </script>
 </body>
