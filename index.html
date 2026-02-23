@@ -350,11 +350,11 @@
         </div>
 
         <div class="tabs">
-            <button class="tab active" onclick="showTab('good-foods')" data-i18n="tabGoodFoods">✅ Foods to Eat</button>
-            <button class="tab" onclick="showTab('avoid-foods')" data-i18n="tabAvoidFoods">❌ Foods to Limit/Avoid</button>
-            <button class="tab" onclick="showTab('daily-targets')" data-i18n="tabDailyTargets">📊 Daily Targets</button>
-            <button class="tab" onclick="showTab('meal-plan')" data-i18n="tabMealPlan">🍽️ Sample Meal Plan</button>
-            <button class="tab" onclick="showTab('tips')" data-i18n="tabTips">💡 Tips & Guidelines</button>
+            <button class="tab active" onclick="showTab('good-foods', this)" data-i18n="tabGoodFoods">✅ Foods to Eat</button>
+            <button class="tab" onclick="showTab('avoid-foods', this)" data-i18n="tabAvoidFoods">❌ Foods to Limit/Avoid</button>
+            <button class="tab" onclick="showTab('daily-targets', this)" data-i18n="tabDailyTargets">📊 Daily Targets</button>
+            <button class="tab" onclick="showTab('meal-plan', this)" data-i18n="tabMealPlan">🍽️ Sample Meal Plan</button>
+            <button class="tab" onclick="showTab('tips', this)" data-i18n="tabTips">💡 Tips & Guidelines</button>
         </div>
 
         <div class="content">
@@ -1351,7 +1351,7 @@
             document.getElementById('langButton').textContent = t.langButton;
         }
 
-        function showTab(tabId) {
+        function showTab(tabId, clickedElement) {
             // Hide all tabs
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
@@ -1362,7 +1362,9 @@
 
             // Show selected tab
             document.getElementById(tabId).classList.add('active');
-            event.target.classList.add('active');
+            if (clickedElement) {
+                clickedElement.classList.add('active');
+            }
         }
 
         // Search functionality
